@@ -31,13 +31,25 @@
             html = html + '</table>';
             document.getElementById('result').innerHTML = html;
         }
+        
+        function buttonPressed() {
+            var userid = document.getElementById('userid').value;
+
+            var sql = `delete from Users where id = ”${userid}’’`;
+
+            document.getElementById('result').innerHTML = 'OK';
+        }
     </script>
 
 </head>
 
 <body>
     <h1>Users</h1>
+    <p>ID:<input type = 'text' name = 'userid'><button onclick="buttonPressed()">削除</button></p>
     <p id="result">xxxx</p>
+    <a href = 'update.html'>ユーザ情報の変更</a>
+    <br>
+    <p id="result"></p>
 </body>
 
 </html>
