@@ -10,9 +10,21 @@
     <script type="text/javascript" src="../osql.js"></script>
 
     <script>
+        var x;
+
         $().ready(function(){
+            x = 0;
+            setInterval(doCount, 1000);
             doSelect();
         });
+
+        async function doCount(){
+            x++;
+            if (x == 2){
+                x = 0; 
+                doSelect();
+            }
+        }
 
 
         function button1Pressed() {
