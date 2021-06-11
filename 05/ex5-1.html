@@ -14,6 +14,10 @@
             doSelect();
         }
 
+        function button2Pressed(){
+            doSelect();
+        }
+
         async function doSelect() {
             var sql = 'select * from Tweets order by time desc limit 20';
             var objects = await osql.connect(sql);
@@ -22,7 +26,7 @@
             html = html + '<ul>';
             for (var i = 0; i < objects.length; i++) {
                 var object = objects[i];
-                html = html + '<li>' + object.id + "," + object.name + "," + object.time
+                html = html + '<li>' + object.tweet + "," + object.id + "," + object.name + "," + object.time
                  + '</li>';
             }
             html = html + '</ul>';
@@ -36,6 +40,9 @@
     <h1>Tweets</h1>
     <button onclick="button1Pressed()">X</button>
     <hr>
+    <input id="research" type="textfield">
+    <button onclick="button2Pressed()">検索</button>
+    <br>
     <p id="result">xxxx</p>
 </body>
 
