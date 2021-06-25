@@ -16,6 +16,9 @@
 
         function button2Pressed(){
             doSelect();
+            r = document.getElementById('research')
+            var html = '';
+            document.getElementById('result').innerHTML = html;
         }
 
         async function doSelect() {
@@ -40,7 +43,7 @@
     <h1>Tweets</h1>
     <button onclick="button1Pressed()">X</button>
     <hr>
-    <input id="research" type="textfield">
+    <input id="research" type="text">
     <button onclick="button2Pressed()">検索</button>
     <br>
     <p id="result">xxxx</p>
